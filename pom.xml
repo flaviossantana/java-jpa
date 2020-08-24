@@ -7,14 +7,28 @@
     <groupId>br.com.alura</groupId>
     <artifactId>java-jpa</artifactId>
     <version>1.0.0</version>
+    <packaging>war</packaging>
+
+    <properties>
+
+    </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-agroal</artifactId>
             <version>5.4.20.Final</version>
             <type>pom</type>
         </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.21</version>
+        </dependency>
+
+
     </dependencies>
 
 </project>
