@@ -19,6 +19,11 @@ public class Conta {
 
     private String titular;
 
+    public Conta(Integer agencia, Integer numero, String titular) {
+        this.agencia = agencia;
+        this.numero = numero;
+        this.titular = titular.toUpperCase();
+    }
 
     public Long getId() {
         return id;
