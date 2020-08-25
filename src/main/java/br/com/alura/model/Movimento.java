@@ -5,6 +5,7 @@ import br.com.alura.tipo.TipoMovimento;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 public class Movimento {
@@ -18,6 +19,9 @@ public class Movimento {
 
     @ManyToOne
     private Conta conta;
+
+    @ManyToMany
+    private List<Categoria> categorias;
 
     private BigDecimal valor;
 
@@ -43,6 +47,7 @@ public class Movimento {
                 "id=" + id +
                 ", tipo=" + tipo +
                 ", conta=" + conta +
+                ", categorias=" + categorias +
                 ", valor=" + valor +
                 ", data=" + data +
                 ", descricao='" + descricao + '\'' +
