@@ -4,7 +4,6 @@ import br.com.alura.model.Categoria;
 import br.com.alura.model.Conta;
 import br.com.alura.model.Movimento;
 import com.github.javafaker.Faker;
-import com.github.javafaker.Number;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
