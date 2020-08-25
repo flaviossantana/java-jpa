@@ -1,15 +1,14 @@
 package br.com.alura;
 
 import br.com.alura.model.Conta;
+import com.github.javafaker.Faker;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import java.math.BigDecimal;
-import java.math.MathContext;
 import java.util.List;
-import java.util.Random;
 
 public class AlterandoSaldoTest {
 
@@ -23,9 +22,7 @@ public class AlterandoSaldoTest {
         manager.getTransaction().begin();
 
         for (Conta conta : contas) {
-            BigDecimal saldo = BigDecimal.valueOf((new Random().nextDouble() * 10000));
-            saldo = saldo.setScale(2, BigDecimal.ROUND_UP);
-            conta.setSaldo(saldo);
+            conta.setSaldo(BigDecimal.valueOf(new Faker().number().randomDouble(2, 1000, 99999)));
         }
 
         manager.getTransaction().commit();

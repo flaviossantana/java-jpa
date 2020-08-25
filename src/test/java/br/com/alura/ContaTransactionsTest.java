@@ -1,6 +1,7 @@
 package br.com.alura;
 
 import br.com.alura.model.Conta;
+import com.github.javafaker.Faker;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -15,7 +16,7 @@ public class ContaTransactionsTest {
 
         manager.getTransaction().begin();
 
-        Conta conta = new Conta(2032, 120987, "Armando Chuva", BigDecimal.valueOf(22328.90));
+        Conta conta = new Conta();
 
         manager.persist(conta);
         manager.getTransaction().commit();
@@ -25,7 +26,7 @@ public class ContaTransactionsTest {
 
         manager.getTransaction().begin();
 
-        conta.setTitular("Armando Chuva JR.");
+        conta.setTitular(new Faker().name().fullName());
         manager.merge(conta);
 
         manager.getTransaction().commit();

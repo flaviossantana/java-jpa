@@ -1,6 +1,7 @@
 package br.com.alura;
 
 import br.com.alura.model.Conta;
+import com.github.javafaker.Faker;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -13,9 +14,9 @@ public class ContaManagedTest {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("conta-db");
         EntityManager manager = emf.createEntityManager();
         manager.getTransaction().begin();
-        Conta conta = new Conta(2032, 120987, "Maria João", BigDecimal.valueOf(22328.90));
+        Conta conta = new Conta();
         manager.persist(conta);
-        conta.setTitular("MARIA JOÃO JR.");
+        conta.setTitular(new Faker().name().fullName());
         manager.getTransaction().commit();
     }
 

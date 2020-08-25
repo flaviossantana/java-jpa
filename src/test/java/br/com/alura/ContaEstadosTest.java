@@ -6,14 +6,32 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class CriarContaTest {
+public class ContaEstadosTest {
 
     public static void main(String[] args) {
+
+        //TRANSIENT
+        Conta conta = new Conta();
+
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("conta-db");
         EntityManager manager = emf.createEntityManager();
+
         manager.getTransaction().begin();
-        manager.persist(new Conta());
+
+        System.out.println("TRANSIENT: " + conta);
+
+        //TRANSIENT -> MANAGED
+        manager.persist(conta);
+
+        System.out.println("MANAGED: " + conta);
+
+        //TRANSIENT -> MANAGED -> REMOVED
+        manager.remove(conta);
+
+        System.out.println("REMOVED: " + conta);
+
         manager.getTransaction().commit();
+
     }
 
 }

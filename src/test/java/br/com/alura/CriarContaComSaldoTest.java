@@ -13,9 +13,9 @@ public class CriarContaComSaldoTest {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("conta-db");
         EntityManager manager = emf.createEntityManager();
         manager.getTransaction().begin();
-        manager.persist(
-                new Conta(2032, 120987, "Osvaldo Costa", BigDecimal.valueOf(22328.90))
-        );
+        Conta conta = new Conta();
+        conta.setSaldo(BigDecimal.valueOf(28943.98));
+        manager.persist(conta);
         manager.getTransaction().commit();
     }
 
