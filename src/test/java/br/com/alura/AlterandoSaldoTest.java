@@ -3,10 +3,7 @@ package br.com.alura;
 import br.com.alura.model.Conta;
 import com.github.javafaker.Faker;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -17,6 +14,7 @@ public class AlterandoSaldoTest {
         EntityManager manager = emf.createEntityManager();
 
         TypedQuery<Conta> select = manager.createQuery("SELECT cta FROM Conta cta", Conta.class);
+        select.setHint("javax.persistence.query.timeou", "1");
         List<Conta> contas = select.getResultList();
 
         manager.getTransaction().begin();
