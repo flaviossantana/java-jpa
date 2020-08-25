@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 
 @Entity
 public class Conta {
@@ -19,10 +20,22 @@ public class Conta {
 
     private String titular;
 
+    private BigDecimal saldo;
+
+    public Conta() {
+    }
+
     public Conta(Integer agencia, Integer numero, String titular) {
         this.agencia = agencia;
         this.numero = numero;
         this.titular = titular.toUpperCase();
+    }
+
+    public Conta(Integer agencia, Integer numero, String titular, BigDecimal saldo) {
+        this.agencia = agencia;
+        this.numero = numero;
+        this.titular = titular;
+        this.saldo = saldo;
     }
 
     public Long getId() {
@@ -55,5 +68,13 @@ public class Conta {
 
     public void setTitular(String titular) {
         this.titular = titular;
+    }
+
+    public BigDecimal getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(BigDecimal saldo) {
+        this.saldo = saldo;
     }
 }
