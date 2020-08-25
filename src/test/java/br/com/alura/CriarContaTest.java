@@ -12,7 +12,7 @@ public class CriarContaTest {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("conta-db");
         EntityManager manager = emf.createEntityManager();
         manager.getTransaction().begin();
-        manager.persist(new Conta(2032, 120987, "Eva Maria"));
+        manager.persist(new Conta(2032, 120987, "Jão Maria"));
         manager.getTransaction().commit();
     }
 
