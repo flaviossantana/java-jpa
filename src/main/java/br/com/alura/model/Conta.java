@@ -33,6 +33,10 @@ public class Conta {
 
     }
 
+    public Conta(Long id) {
+        this.id = id;
+    }
+
     public Conta(String titular) {
         this();
         this.titular = titular;

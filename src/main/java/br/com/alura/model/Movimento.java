@@ -33,10 +33,19 @@ public class Movimento {
         super();
     }
 
-    public Movimento(BigDecimal valor, TipoMovimento tipo, Conta conta, LocalDateTime data, String descricao) {
-        this.valor = valor;
+    public Movimento(TipoMovimento tipo, Conta conta, List<Categoria> categorias, BigDecimal valor, LocalDateTime data, String descricao) {
         this.tipo = tipo;
         this.conta = conta;
+        this.categorias = categorias;
+        this.valor = valor;
+        this.data = data;
+        this.descricao = descricao;
+    }
+
+    public Movimento(BigDecimal valor, TipoMovimento tipo, Conta conta, LocalDateTime data, String descricao) {
+        this.tipo = tipo;
+        this.conta = conta;
+        this.valor = valor;
         this.data = data;
         this.descricao = descricao;
     }

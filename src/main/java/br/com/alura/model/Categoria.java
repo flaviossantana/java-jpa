@@ -1,5 +1,7 @@
 package br.com.alura.model;
 
+import com.github.javafaker.Faker;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,4 +16,12 @@ public class Categoria {
 
     private String nome;
 
+    public Categoria() {
+        super();
+        this.nome = new Faker().beer().style();
+    }
+
+    public Categoria(String nome) {
+        this.nome = nome;
+    }
 }
