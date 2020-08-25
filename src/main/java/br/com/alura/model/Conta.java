@@ -26,7 +26,7 @@ public class Conta {
 
     public Conta() {
         Faker titular = new Faker();
-        this.titular = titular.starTrek().character();
+        this.titular = titular.funnyName().name();
         this.agencia = titular.number().numberBetween(1000, 9999);
         this.numero = titular.number().numberBetween(100000, 999999);
         this.saldo = BigDecimal.valueOf(titular.number().randomDouble(2, 1000, 99999));

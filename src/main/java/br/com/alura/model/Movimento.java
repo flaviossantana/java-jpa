@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-public class Movimentacao {
+public class Movimento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,20 +16,36 @@ public class Movimentacao {
     @Enumerated(EnumType.STRING)
     private TipoMovimento tipo;
 
+    @ManyToOne
+    private Conta conta;
+
     private BigDecimal valor;
 
     private LocalDateTime data;
 
     private String descricao;
 
-    public Movimentacao() {
+    public Movimento() {
         super();
     }
 
-    public Movimentacao(BigDecimal valor, TipoMovimento tipo, LocalDateTime data, String descricao) {
+    public Movimento(BigDecimal valor, TipoMovimento tipo, Conta conta, LocalDateTime data, String descricao) {
         this.valor = valor;
         this.tipo = tipo;
+        this.conta = conta;
         this.data = data;
         this.descricao = descricao;
+    }
+
+    @Override
+    public String toString() {
+        return "Movimento{" +
+                "id=" + id +
+                ", tipo=" + tipo +
+                ", conta=" + conta +
+                ", valor=" + valor +
+                ", data=" + data +
+                ", descricao='" + descricao + '\'' +
+                '}';
     }
 }
