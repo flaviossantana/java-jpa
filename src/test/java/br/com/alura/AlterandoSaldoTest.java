@@ -14,7 +14,7 @@ public class AlterandoSaldoTest {
         EntityManager manager = emf.createEntityManager();
 
         TypedQuery<Conta> select = manager.createQuery("SELECT cta FROM Conta cta", Conta.class);
-        select.setHint("javax.persistence.query.timeou", "1");
+        select.setHint("javax.persistence.query.timeout", "1");
         List<Conta> contas = select.getResultList();
 
         manager.getTransaction().begin();
