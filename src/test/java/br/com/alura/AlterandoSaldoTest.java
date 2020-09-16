@@ -15,7 +15,7 @@ public class AlterandoSaldoTest {
 
         EntityManager manager = PersistenceUtil.entityManager();
 
-        TypedQuery<Conta> select = manager.createQuery("SELECT cta FROM Conta cta", Conta.class);
+        TypedQuery<Conta> select = manager.createQuery("SELECT cta FROM Conta cta ", Conta.class);
         select.setHint("javax.persistence.query.timeout", "1");
         List<Conta> contas = select.getResultList();
 

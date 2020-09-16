@@ -1,11 +1,10 @@
 package br.com.alura;
 
+import br.com.alura.core.PersistenceUtil;
 import br.com.alura.model.Categoria;
 import br.com.alura.model.Movimento;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import java.util.List;
 

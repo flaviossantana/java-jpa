@@ -1,5 +1,6 @@
 package br.com.alura;
 
+import br.com.alura.core.PersistenceUtil;
 import br.com.alura.model.Conta;
 import com.github.javafaker.Faker;
 
