@@ -4,10 +4,7 @@ import br.com.alura.model.Conta;
 import br.com.alura.model.Movimento;
 import com.github.javafaker.Faker;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
+import javax.persistence.*;
 import java.util.List;
 
 public class JpqlTest {
@@ -23,8 +20,9 @@ public class JpqlTest {
         select.append("select m ");
         select.append("from Movimento m ");
         select.append("where m.conta = :pConta ");
+        select.append("order by m.valor desc ");
 
-        Query query = entityManager.createQuery(select.toString(), Movimento.class);
+        TypedQuery<Movimento> query = entityManager.createQuery(select.toString(), Movimento.class);
         query.setParameter("pConta", new Conta(new Faker().number().numberBetween(1L, 32L)));
 
 
