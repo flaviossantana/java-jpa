@@ -43,8 +43,7 @@ public class RelacionamentoMovimentoCategoriaTest {
                 faker.commerce().department()
         );
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("conta-db");
-        EntityManager manager = emf.createEntityManager();
+        EntityManager manager = PersistenceUtil.entityManager();
         manager.getTransaction().begin();
 
         manager.persist(catUm);

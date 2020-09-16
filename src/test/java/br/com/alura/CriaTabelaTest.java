@@ -7,8 +7,7 @@ import javax.persistence.Persistence;
 public class CriaTabelaTest {
 
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("conta-db");
-        EntityManager entityManager = emf.createEntityManager();
+        EntityManager entityManager = PersistenceUtil.entityManager();
         entityManager.close();
     }
 

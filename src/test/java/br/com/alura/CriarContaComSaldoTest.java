@@ -10,8 +10,7 @@ import java.math.BigDecimal;
 public class CriarContaComSaldoTest {
 
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("conta-db");
-        EntityManager manager = emf.createEntityManager();
+        EntityManager manager = PersistenceUtil.entityManager();
         manager.getTransaction().begin();
         Conta conta = new Conta();
         conta.setSaldo(BigDecimal.valueOf(28943.98));

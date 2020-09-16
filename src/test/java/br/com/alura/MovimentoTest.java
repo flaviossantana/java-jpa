@@ -24,8 +24,7 @@ public class MovimentoTest {
                 LocalDateTime.now(ZoneId.systemDefault()),
                 new Faker().beer().name());
 
-        EntityManagerFactory contadb = Persistence.createEntityManagerFactory("conta-db");
-        EntityManager entityManager = contadb.createEntityManager();
+        EntityManager entityManager = PersistenceUtil.entityManager();
 
         entityManager.getTransaction().begin();
 

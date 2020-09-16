@@ -12,8 +12,8 @@ import java.util.List;
 public class MovimentacaoCategoriaTest {
 
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("conta-db");
-        EntityManager em = emf.createEntityManager();
+
+        EntityManager em = PersistenceUtil.entityManager();
 
         em.getTransaction().begin();
 

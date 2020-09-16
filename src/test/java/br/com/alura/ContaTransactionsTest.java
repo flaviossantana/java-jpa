@@ -11,8 +11,7 @@ import java.math.BigDecimal;
 public class ContaTransactionsTest {
 
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("conta-db");
-        EntityManager manager = emf.createEntityManager();
+        EntityManager manager = PersistenceUtil.entityManager();
 
         manager.getTransaction().begin();
 
@@ -21,8 +20,7 @@ public class ContaTransactionsTest {
         manager.persist(conta);
         manager.getTransaction().commit();
 
-        emf = Persistence.createEntityManagerFactory("conta-db");
-        manager = emf.createEntityManager();
+        manager = PersistenceUtil.entityManager();
 
         manager.getTransaction().begin();
 

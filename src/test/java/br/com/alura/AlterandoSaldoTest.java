@@ -1,5 +1,6 @@
 package br.com.alura;
 
+import br.com.alura.core.PersistenceUtil;
 import br.com.alura.model.Conta;
 import com.github.javafaker.Faker;
 
@@ -10,8 +11,9 @@ import java.util.List;
 public class AlterandoSaldoTest {
 
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("conta-db");
-        EntityManager manager = emf.createEntityManager();
+
+
+        EntityManager manager = PersistenceUtil.entityManager();
 
         TypedQuery<Conta> select = manager.createQuery("SELECT cta FROM Conta cta", Conta.class);
         select.setHint("javax.persistence.query.timeout", "1");

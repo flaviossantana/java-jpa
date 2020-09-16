@@ -13,8 +13,7 @@ public class ContaEstadosTest {
         //TRANSIENT
         Conta conta = new Conta();
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("conta-db");
-        EntityManager manager = emf.createEntityManager();
+        EntityManager manager = PersistenceUtil.entityManager();
 
         manager.getTransaction().begin();
 

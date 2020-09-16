@@ -11,9 +11,7 @@ public class JpqlTest {
 
     public static void main(String[] args) {
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("conta-db");
-        EntityManager entityManager = emf.createEntityManager();
-
+        EntityManager entityManager = PersistenceUtil.entityManager();
         entityManager.getTransaction().begin();
 
         StringBuilder select = new StringBuilder();

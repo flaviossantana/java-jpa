@@ -5,17 +5,12 @@ import br.com.alura.model.Conta;
 import com.github.javafaker.Faker;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
 public class ClienteContaTest {
 
     public static void main(String[] args) {
 
-
-
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("conta-db");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityManager entityManager = PersistenceUtil.entityManager();
 
         entityManager.getTransaction().begin();
 
