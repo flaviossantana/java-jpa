@@ -43,3 +43,8 @@ gerador de dados falsos.
   - Aprendemos também como relacionar uma entidade com uma outra entidade
     - Para tal, temos as anotações @OneToOne e @ManyToOne, dependendo da cardinalidade
   - Ao persistir uma entidade, devemos persistir as entidades transientes do relacionamento
+  - Como executar queries com JPA, usando JPQL
+    - A linguagem JPQL é bem parecida com SQL, no entanto orientada a objetos
+    - Com JPQL, usamos as classes e atributos (no lugar das tabelas e colunas) para definir a pesquisa
+  - O objeto do tipo javax.persistence.Query encapsula a query
+    - javax.persistence.TypedQuery é a versão tipada do javax.persistence.Query
