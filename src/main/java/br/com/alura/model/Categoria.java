@@ -16,9 +16,15 @@ public class Categoria {
 
     private String nome;
 
+
+
     public Categoria() {
         super();
         this.nome = new Faker().beer().style();
+    }
+
+    public Categoria(Long id) {
+        this.id = id;
     }
 
     public Categoria(String nome) {
